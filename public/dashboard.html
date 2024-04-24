@@ -40,5 +40,21 @@
     </div>
 
     <script src="script.js"></script>
+
+    <script>
+
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+        }
+        
+        // Check if the user is logged in
+        window.onload = function() {
+            if (!localStorage.getItem('isLoggedIn')) {
+                window.location.href = 'index.html'; // Redirect to login page if not logged in
+            }
+        }
+    </script>
+
+    
 </body>
 </html>

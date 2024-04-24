@@ -50,6 +50,23 @@
     </div>
 
     <script src="script.js"></script>
+
+<script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            // Example: Check if username and password are valid
+            if (username === 'user' && password === 'password') {
+                // Simulate successful login
+                localStorage.setItem('isLoggedIn', 'true');
+                window.location.href = 'dashboard.html'; // Redirect to dashboard
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+</script>
+    
 </body>
 
 </html>
