@@ -5,8 +5,6 @@ body {
     background-color: #f4f4f4;
 }
 
-
-
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -72,11 +70,6 @@ h1 {
 .todo-item button:hover {
     background-color: #c82333;
 }
-
-
-
-
-
 
 .navbar {
     background-color: #333;
