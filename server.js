@@ -1,3 +1,4 @@
+//server.js
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
@@ -114,6 +115,7 @@ app.post('/api/register', async (req, res) => {
 
 	res.json({ status: 'ok' })
 })
+
 
 app.listen(2000, () => {
 	console.log('Server is running on port 2000')
