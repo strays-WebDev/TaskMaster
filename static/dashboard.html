@@ -7,18 +7,15 @@
     <link rel="stylesheet" href="dash.css">
 </head>
 <body>
-    <div class="todo-container">
-
-        <nav class="navbar">
+    <span id="username-placeholder">USERNAME</span> is logged in successfully!
+ <nav class="navbar">
             <div class="container">
                 <h1 class="logo">Task Master</h1>
                 <ul class="nav-links">
-                    
-                    <li><a href="showAll.html">Show all tasks</a></li>
+                    <li><a href="showall.html">Show all tasks</a></li>
                     <li><a href="crisis.html">Crisis Mode</a></li>
-                    <li><a href="#">sort by due date</a></li>
-                    <li><a href="#">view analysis</a></li>
-                    
+                    <li><a href="analysis.html">View Analysis</a></li>
+                    <li><a href="#">sort by due date</a></li> 
                 </ul>
                 <div class="burger">
                     <div class="line"></div>
@@ -27,6 +24,10 @@
                 </div>
             </div>
         </nav>
+    <div class="todo-container">
+        <h2>WELCOME TO THE DASHBOARD!</h2>
+        <p>Here you can create tasks, make sure you add the decription and a due date.</p>
+       
         <h1>To Do List</h1>
         <form id="todo-form">
             <input type="text" id="todo-input" placeholder="Add new todo">
@@ -39,6 +40,12 @@
         </ul>
         <button id="logout-btn">Logout</button>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Task Master. All rights reserved.</p>
+        </div>
+    </footer>
     
     <script src="script.js"></script>
     
