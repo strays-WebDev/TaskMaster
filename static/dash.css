@@ -7,8 +7,12 @@ body {
     background-color: #f4f4f4;
 }
 
+<<<<<<< HEAD
 /* Header styles */
 .header {
+=======
+h1 {
+>>>>>>> main
     text-align: center;
     margin-bottom: 20px;
 }
@@ -21,7 +25,64 @@ body {
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 /* Navbar styles */
+=======
+#todo-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+#todo-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#todo-form button:hover {
+    background-color: #0056b3;
+}
+
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-item span {
+    flex: 1;
+}
+
+.todo-item button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-item button:hover {
+    background-color: #c82333;
+}
+
+>>>>>>> main
 .navbar {
     background-color: #333;
     color: #fff;
