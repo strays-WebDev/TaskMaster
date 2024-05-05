@@ -1,0 +1,98 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e2e2e2, #c4c4c4);
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%; /* Change to 1200px if you want a max-width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    margin: 0;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+/* Analysis container styles */
+.analysis-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-container h2 {
+    text-align: center;
+}
+
+.analysis-container p {
+    text-align: center;
+}
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center; /* Center align the content horizontally */
+    align-items: center; /* Center align the content vertically */
+}
+
+.footer p {
+    margin: 0;
+}
