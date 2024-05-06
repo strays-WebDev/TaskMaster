@@ -7,12 +7,7 @@ body {
     background-color: #f4f4f4;
 }
 
-<<<<<<< HEAD
-/* Header styles */
-.header {
-=======
 h1 {
->>>>>>> main
     text-align: center;
     margin-bottom: 20px;
 }
@@ -25,9 +20,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
-/* Navbar styles */
-=======
 #todo-input {
     flex: 1;
     padding: 10px;
@@ -82,7 +74,6 @@ h1 {
     background-color: #c82333;
 }
 
->>>>>>> main
 .navbar {
     background-color: #333;
     color: #fff;
