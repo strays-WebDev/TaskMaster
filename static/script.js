@@ -11,11 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const urlParams = new URLSearchParams(window.location.search);
+    console.log('URL Parameters:', urlParams.toString()); // Log URL parameters
     const username = urlParams.get('username');
+    console.log('Username:', username); // Debugging
     const usernamePlaceholder = document.getElementById('username-placeholder');
+    console.log('Username placeholder element:', usernamePlaceholder); // Log the username placeholder element
     if (username && usernamePlaceholder) {
         usernamePlaceholder.textContent = username;
     }
+
+    // Call the setupLogoutButton function here
+    setupLogoutButton();
+});
 
     // Function to handle user registration
     async function registerUser(event) {
@@ -62,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Got the token: ', result.data);
             localStorage.setItem('token', result.data);
             alert('Login Successful');
-            window.location.href = '/dashboard.html'; // Redirect to dashboard
+            window.location.href = `/dashboard.html?username=${username}`; 
         } else {
             alert(result.error);
         }
@@ -98,4 +105,24 @@ document.addEventListener('DOMContentLoaded', () => {
         todoInput.value = '';
         dateInput.value = '';
     });
-});
+
+
+// Wrap the event listener code in a function
+function setupLogoutButton() {
+    console.log('Setting up logout button'); // debug
+    const logoutBtn = document.getElementById('logout-btn');
+    console.log('logoutBtn:', logoutBtn); // debug
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', logoutUser);
+    } else {
+        console.log('Logout button not found'); // debugging
+    }
+}
+
+async function logoutUser() {
+    console.log('Logout button clicked'); //debug
+    // Remove token from localStorage
+    localStorage.removeItem('token');
+    // Redirect to index page
+    window.location.href = '/'; // Redirect to index
+}
