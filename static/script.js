@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Login functionality
     const regForm = document.getElementById('reg-form');
@@ -21,9 +23,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Call the setupLogoutButton function here
-    setupLogoutButton();
+    setupLogoutButton();  // when login is called, it calls on function load Tasks, here we well get our tasks
+    if(window.location.href.indexOf("/dashboard.html") != -1)
+    {
+        loadTasks(); // call taks so we can load the tasks for whoever logs in 
+    }
 });
-
+    // in our load tast function, we fetch to the data base to get tasks with the id of the person who 
+    // logged in, we will iterate through the tasks with that specific id and display them
+    function loadTasks()
+    {
+        // fetch tasks from the data base
+        const result = fetch('/api/tasks', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        // itterate through all tasks with that familiar id and display them 
+        }).then((res) => res.json()).then((json) => {
+            var data = json;
+            for(i = 0; i < json.length; i++)
+            {
+                taskItem = document.createElement('li');
+                taskItem.textContent = `${json[i].description} - ${json[i].date}`;
+                todoList.appendChild(taskItem);
+            }
+        });
+    }
     // Function to handle user registration
     async function registerUser(event) {
         event.preventDefault();
@@ -81,11 +107,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateInput = document.getElementById('date-input');
     const todoList = document.getElementById('todo-list');
 
-    // Function to add a new task to the list
+    // In this function, we want to be able to add tasks to our db
     function addTaskToList(description, date) {
-        const taskItem = document.createElement('li');
-        taskItem.textContent = `${description} - ${date}`;
-        todoList.appendChild(taskItem);
+        // so here, we will get the task and enter it to the database
+        fetch('/api/task', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // setting body of request to JSON string that has the task description and date
+            body: JSON.stringify({
+                description: description,
+                date: date 
+            })
+            // now we create it 
+        }).then((res) => {
+            // creates new list item
+            taskItem = document.createElement('li');
+            // sets the text part to the description and date 
+            taskItem.textContent = `${description} - ${date}`;
+            todoList.appendChild(taskItem);
+        }
+        );
     }
 
     // Event listener for form submission
